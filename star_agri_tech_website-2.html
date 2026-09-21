@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Star Agri Tech — quality mango protection bags for bulk agricultural orders.">
+  <title>Star Agri Tech | Mango Protection Bags</title>
+  <style>
+    :root{
+      --green:#174d2b;
+      --green2:#2f7d46;
+      --lime:#a8d45f;
+      --cream:#f7f3e9;
+      --white:#fff;
+      --ink:#172019;
+      --muted:#667067;
+      --line:rgba(23,77,43,.12);
+      --shadow:0 20px 60px rgba(23,77,43,.12);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:var(--cream);color:var(--ink);line-height:1.6;overflow-x:hidden;
+    }
+    a{text-decoration:none;color:inherit}
+    .container{width:min(1120px,92%);margin:auto}
+    .fade{opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s ease}
+    .fade.show{opacity:1;transform:none}
+    header{
+      position:fixed;top:0;left:0;width:100%;z-index:20;
+      background:rgba(247,243,233,.82);backdrop-filter:blur(16px);
+      border-bottom:1px solid var(--line);
+    }
+    nav{height:76px;display:flex;align-items:center;justify-content:space-between}
+    .logo{font-weight:900;font-size:1.2rem;letter-spacing:-.04em;color:var(--green)}
+    .navlinks{display:flex;gap:28px;color:#425047;font-size:.95rem}
+    .navlinks a{transition:color .25s}.navlinks a:hover{color:var(--green)}
+    .navbtn{
+      padding:11px 18px;border-radius:999px;background:var(--green);color:white;
+      font-weight:700;font-size:.9rem;transition:transform .25s,background .25s;
+    }
+    .navbtn:hover{transform:translateY(-2px);background:#103a20}
+    .hero{min-height:100vh;display:grid;place-items:center;padding:140px 0 80px;position:relative}
+    .hero:before{
+      content:"";position:absolute;width:520px;height:520px;border-radius:50%;
+      background:rgba(168,212,95,.23);filter:blur(5px);right:-180px;top:120px;
+    }
+    .hero:after{
+      content:"";position:absolute;width:320px;height:320px;border-radius:50%;
+      border:1px solid rgba(47,125,70,.18);left:-150px;bottom:40px;
+    }
+    .hero-inner{position:relative;z-index:1;text-align:center;max-width:900px}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border:1px solid var(--line);
+      border-radius:999px;background:rgba(255,255,255,.58);color:var(--green);
+      font-weight:800;font-size:.82rem;margin-bottom:24px;
+    }
+    .dot{width:8px;height:8px;border-radius:50%;background:var(--lime)}
+    h1{font-size:clamp(3.4rem,9vw,7.6rem);line-height:.9;letter-spacing:-.075em;color:var(--green);font-weight:950}
+    .hero-sub{font-size:clamp(1.15rem,2vw,1.45rem);margin:30px auto 12px;font-weight:750}
+    .hero-copy{max-width:680px;margin:auto;color:var(--muted);font-size:1.02rem}
+    .actions{display:flex;justify-content:center;gap:12px;margin-top:32px;flex-wrap:wrap}
+    .btn{padding:14px 22px;border-radius:999px;font-weight:800;transition:transform .25s,box-shadow .25s}
+    .btn:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(23,77,43,.14)}
+    .primary{background:var(--green);color:white}.secondary{background:white;color:var(--green);border:1px solid var(--line)}
+    section{padding:110px 0}
+    .section-head{max-width:700px;margin-bottom:46px}
+    .kicker{text-transform:uppercase;letter-spacing:.14em;color:var(--green2);font-size:.78rem;font-weight:900;margin-bottom:10px}
+    h2{font-size:clamp(2.2rem,5vw,4rem);line-height:1.02;letter-spacing:-.055em;color:var(--green)}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+    .card{
+      background:white;border:1px solid var(--line);border-radius:28px;padding:34px;box-shadow:var(--shadow)
+    }
+    .card p{color:var(--muted);font-size:1.02rem}
+    .feature-list{display:grid;gap:18px}
+    .feature{display:flex;gap:15px;align-items:flex-start}
+    .icon{width:42px;height:42px;border-radius:14px;background:#edf6df;display:grid;place-items:center;color:var(--green);font-weight:900;flex:none}
+    .feature strong{display:block;margin-bottom:2px}.feature span{color:var(--muted);font-size:.94rem}
+    .product{background:var(--green);color:white;position:relative;overflow:hidden}
+    .product .section-head h2,.product .kicker{color:white}
+    .product .kicker{opacity:.7}
+    .product-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:30px;align-items:stretch}
+    .product-visual{
+      min-height:430px;border-radius:30px;background:linear-gradient(145deg,#dceebf,#8fbd62);
+      display:grid;place-items:center;position:relative;overflow:hidden;
+    }
+    .bag{
+      width:240px;height:330px;background:rgba(255,255,255,.88);border:2px solid rgba(23,77,43,.2);
+      border-radius:10px 10px 24px 24px;transform:rotate(-4deg);
+      box-shadow:20px 25px 40px rgba(23,77,43,.18);display:flex;align-items:center;justify-content:center;
+      text-align:center;color:var(--green);font-weight:950;font-size:1.7rem;letter-spacing:-.04em;
+      position:relative;
+    }
+    .bag:before{content:"";position:absolute;top:14px;left:18px;right:18px;height:2px;background:rgba(23,77,43,.15)}
+    .product-info{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:30px;padding:38px}
+    .product-info h3{font-size:2rem;margin-bottom:12px}
+    .product-info p{color:rgba(255,255,255,.75);margin-bottom:24px}
+    .bullets{display:grid;gap:13px;margin-bottom:30px}
+    .bullets div{display:flex;gap:10px}.check{color:var(--lime);font-weight:900}
+    .order{background:#edf4e6}
+    .order-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+    .contact-card{background:white;border-radius:28px;padding:35px;border:1px solid var(--line)}
+    .contact-card h3{font-size:1.7rem;color:var(--green);margin-bottom:8px}
+    .contact-card p{color:var(--muted);margin-bottom:20px}
+    .contact-row{padding:15px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:20px}
+    .contact-row:last-child{border:0}.label{color:var(--muted);font-size:.9rem}.value{font-weight:800;color:var(--green);text-align:right}
+    .steps{display:grid;gap:14px}.step{display:flex;gap:15px;align-items:center;background:white;border-radius:20px;padding:18px;border:1px solid var(--line)}
+    .num{width:34px;height:34px;border-radius:50%;background:var(--green);color:white;display:grid;place-items:center;font-weight:900}
+    footer{background:#103a20;color:rgba(255,255,255,.72);padding:32px 0}
+    footer .container{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    footer strong{color:white}
+    @media(max-width:760px){
+      .navlinks{display:none}.navbtn{padding:10px 15px}
+      .hero{padding-top:120px}.hero:before{width:350px;height:350px}
+      .about-grid,.product-grid,.order-grid{grid-template-columns:1fr}
+      section{padding:80px 0}.product-visual{min-height:360px}.bag{width:190px;height:270px}
+      .contact-row{flex-direction:column;gap:4px}.value{text-align:left}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <nav class="container">
+    <a class="logo" href="#home">STAR AGRI TECH</a>
+    <div class="navlinks">
+      <a href="#about">About</a><a href="#product">Product</a><a href="#order">Bulk Orders</a>
+    </div>
+    <a class="navbtn" href="#order">Order Now</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="hero-inner fade">
+      <div class="eyebrow"><span class="dot"></span> Agricultural Protection Solutions</div>
+      <h1>Star Agri Tech</h1>
+      <p class="hero-sub">Mango Protection Bags</p>
+      <p class="hero-copy">Quality mango protection bags manufactured for growers, traders and bulk agricultural requirements.</p>
+      <div class="actions">
+        <a class="btn primary" href="#product">View Product</a>
+        <a class="btn secondary" href="#order">Bulk Order</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <div class="section-head fade">
+        <div class="kicker">About our company</div>
+        <h2>Built around better mango protection.</h2>
+      </div>
+      <div class="about-grid">
+        <div class="card fade">
+          <p>At <strong>Star Agri Tech</strong>, we serve good-quality mango protection bags for agricultural needs. Our focus is manufacturing reliable protection bags and supplying them directly for bulk orders.</p>
+        </div>
+        <div class="card fade">
+          <div class="feature-list">
+            <div class="feature"><div class="icon">01</div><div><strong>Quality focused</strong><span>Good-quality mango protection bags for practical agricultural use.</span></div></div>
+            <div class="feature"><div class="icon">02</div><div><strong>Direct manufacturing</strong><span>We manufacture protection bags and supply them directly.</span></div></div>
+            <div class="feature"><div class="icon">03</div><div><strong>Bulk orders</strong><span>Direct bulk-order service without requiring an account or login.</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="product" id="product">
+    <div class="container">
+      <div class="section-head fade">
+        <div class="kicker">Our product</div>
+        <h2>Mango Protection Bag</h2>
+      </div>
+      <div class="product-grid">
+        <div class="product-visual fade"><div class="bag">MANGO<br>PROTECTION<br>BAG</div></div>
+        <div class="product-info fade">
+          <h3>Protection made for mango growers</h3>
+          <p>Our mango protection bags are manufactured by Star Agri Tech and supplied directly for bulk agricultural requirements.</p>
+          <div class="bullets">
+            <div><span class="check">✓</span><span>Manufactured by Star Agri Tech</span></div>
+            <div><span class="check">✓</span><span>Available for direct bulk orders</span></div>
+            <div><span class="check">✓</span><span>No login or account required</span></div>
+            <div><span class="check">✓</span><span>Direct enquiry and order</span></div>
+          </div>
+          <a class="btn secondary" href="#order">Enquire for Bulk Order</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="order" id="order">
+    <div class="container">
+      <div class="section-head fade">
+        <div class="kicker">Bulk orders</div>
+        <h2>Order directly. Simple and straightforward.</h2>
+      </div>
+      <div class="order-grid">
+        <div class="contact-card fade">
+          <h3>How to order</h3>
+          <p>There is no login or online payment. Contact Star Agri Tech with your required quantity and delivery details.</p>
+          <div class="steps">
+            <div class="step"><span class="num">1</span><span>Send your required quantity</span></div>
+            <div class="step"><span class="num">2</span><span>Confirm the bulk order and delivery details</span></div>
+            <div class="step"><span class="num">3</span><span>Confirm your order and delivery details</span></div>
+          </div>
+        </div>
+        <div class="contact-card fade">
+          <h3>Contact Star Agri Tech</h3>
+          <p>Replace the details below with your real business contact information before publishing.</p>
+          <div class="contact-row"><span class="label">Phone / WhatsApp</span><span class="value">+91 7799768080</span></div>
+          <div class="contact-row"><span class="label">UPI</span><span class="value">yourupi@bank</span></div>
+          <div class="contact-row"><span class="label">Payment</span><span class="value">Cash / UPI</span></div>
+          <div class="contact-row"><span class="label">Orders</span><span class="value">Bulk orders directly</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div><strong>Star Agri Tech</strong> · Mango Protection Bags</div>
+    <div>Quality manufacturing · Direct bulk orders</div>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{ if(entry.isIntersecting){ entry.target.classList.add('show'); observer.unobserve(entry.target); }});
+  },{threshold:.12});
+  document.querySelectorAll('.fade').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
